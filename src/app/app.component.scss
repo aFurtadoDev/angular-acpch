@@ -26,3 +26,13 @@ mat-form-field {
 mat-expansion-panel-header {
   font-size: 12px;
 }
+
+
+.mat-action-row {
+  border-top-style: solid;
+  border-top-width: 1px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 5px 8px 0px 24px;
+}

@@ -20,39 +20,55 @@
         </mat-panel-description>
       </mat-expansion-panel-header>
 
-      <div fxLayout="row" fxLayout.sm="column" fxLayoutGap="5"></div>
-      <mat-form-field appearance="outline">
-        <mat-label>Lux Solicitado...</mat-label>
-        <input matInput placeholder="Placeholder" />
-        <span matSuffix>lux</span>
-        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
-        <!-- <mat-hint>Hint</mat-hint> -->
-      </mat-form-field>
+      <div class="row">
+        <div class="col-md-3">
+          <mat-form-field appearance="outline">
+            <mat-label>Lux Solicitado...</mat-label>
+            <input matInput placeholder="Placeholder" />
+            <span matSuffix>lux</span>
+            <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+            <!-- <mat-hint>Hint</mat-hint> -->
+          </mat-form-field>
+        </div>
+        <div class="col-md-3">
+          <mat-form-field appearance="outline">
+            <mat-label>Área Iluminada...</mat-label>
+            <input matInput placeholder="Placeholder" />
+            <span matSuffix>%</span>
+            <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+            <!-- <mat-hint>Hint</mat-hint> -->
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field appearance="outline">
+            <mat-label>Select me</mat-label>
+            <mat-select>
+              <mat-option value="option">Option</mat-option>
+            </mat-select>
+            <!-- <mat-hint align="end">Here's the dropdown arrow ^</mat-hint> -->
+          </mat-form-field>
+        </div>
+        <div class="col-md-12">
+          <mat-form-field appearance="outline">
+            <mat-label>Textarea</mat-label>
+            <textarea matInput rows="1" #input></textarea>
+            <mat-hint align="end">{{ input.value?.length || 0 }}/200</mat-hint>
+            <button
+              *ngIf="input"
+              matSuffix
+              mat-icon-button
+              aria-label="Clear"
+              (click)="input = ''"
+            >
+              <mat-icon>close</mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
 
-      <mat-form-field appearance="outline">
-        <mat-label>Área Iluminada...</mat-label>
-        <input matInput placeholder="Placeholder" />
-        <span matSuffix>%</span>
-        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
-        <!-- <mat-hint>Hint</mat-hint> -->
-      </mat-form-field>
-
-      <mat-form-field appearance="outline">
-        <mat-label>Select me</mat-label>
-        <mat-select>
-          <mat-option value="option">Option</mat-option>
-        </mat-select>
-        <!-- <mat-hint align="end">Here's the dropdown arrow ^</mat-hint> -->
-      </mat-form-field>
-
-      <mat-form-field appearance="outline">
-        <mat-label>Textarea</mat-label>
-        <textarea matInput rows="1"></textarea>
-      </mat-form-field>
-
-      <mat-action-row>
-        <button mat-button color="primary" (click)="nextStep()">Next</button>
-      </mat-action-row>
+        <mat-action-row>
+          <button mat-button color="primary" (click)="nextStep()">Next</button>
+        </mat-action-row>
+      </div>
     </mat-expansion-panel>
 
     <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)">
